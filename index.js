@@ -7,7 +7,7 @@
  *  text - Текст, у якому треба здійснити заміну.
  */
 function replaceText(word, replacement, text) {const  flags = "g"; const regex = new RegExp(word, flags);  
-console.log(text.replace(regex, replacement));
+return text.replace(regex, replacement);
 
   // Створення регулярного виразу для пошуку слова з флагом 'g' (глобальний пошук).
   // Використання методу `replace` регулярного виразу для заміни слова на фразу у тексті.
@@ -33,7 +33,7 @@ console.log(
  *  word - Слово для перевірки.
  *  text - Текст, який треба перевірити.
  */
-function checkWord(word, text) {const  flags = "i"; const regex = new RegExp(word, flags); console.log(regex.test(text));
+function checkWord(word, text) {const  flags = "i"; const regex = new RegExp(word, flags); return regex.test(text); 
   // Створення регулярного виразу для пошуку слова з флагом 'i' (регістронезалежний пошук).
   // Використання методу `test` регулярного виразу для перевірки наявності слова у тексті.
   // Повернення результату перевірки.
@@ -75,7 +75,7 @@ console.log(extractTextInParentheses("I have some (text) in (parentheses)."));
  *  str - Рядок, в якому потрібно знайти email-адреси.
  */
 function countEmails(str) { const regex1 =/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g; 
-const array = [...str.match(regex1)]; console.log(array.length);
+const array = [...str.match(regex1)]; return array.length;
   // Створення регулярного виразу для пошуку email-адрес /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g.
   // Використання методу `match` для отримання всіх збігів регулярного виразу.
   // Підрахунок кількості email-адрес.
@@ -159,7 +159,8 @@ console.log(checkRegexFlags(/pattern/gm));
  *  newWord - Нове слово, яким потрібно замінити.
  * Повертає  - Результат заміни входжень слова у рядку.
  */
-function replaceWordOccurrences(str, word, newWord) { const  flags = "g"; const regex = new RegExp(word, flags); console.log(str.replaceAll(regex, newWord));
+function replaceWordOccurrences(str, word, newWord) { const flags = "g"; const regex = new RegExp(word, flags); 
+return str.replaceAll(regex, newWord);
   // Створюємо регулярний вираз зі словом, використовуючи флаг 'g' для глобального пошуку всіх входжень.
   // Заміняємо всі входження слова у рядку на нове слово.
   // Повертаємо результат
@@ -240,7 +241,7 @@ console.log(checkRegexMethods(/test/msy));
  *  word - Слово, входження якого потрібно знайти.
  * Повертає  - Індекс першого входження слова у рядок або -1, якщо слово не знайдено.
  */
-function findWord(str, word) {const regex = new RegExp(word); console.log(str.search(regex));
+function findWord(str, word) {const regex = new RegExp(word); return str.search(regex);
 
   // Створення регулярного виразу для пошуку слова.
   // Використання методу `search` для пошуку першого входження слова.
